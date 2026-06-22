@@ -102,9 +102,8 @@
     aspect-ratio:1/1;
     display:flex; align-items:center; justify-content:center;
     font-size:13px; font-weight:700; text-align:center; color:#fff; padding:14px;
-    background:linear-gradient(135deg,var(--red),var(--orange));
+    background-size:cover; background-position:center;
   }
-  .ph.alt{ background:linear-gradient(135deg, var(--ink), #374151); }
   .ph.tall{ grid-row: span 2; aspect-ratio:auto; }
   .note-card{
     position:absolute; bottom:-18px; left:-18px;
@@ -136,9 +135,7 @@
   .about-photo{ position:relative; }
   .about-ph{
     border-radius:18px; aspect-ratio:4/5;
-    background:linear-gradient(160deg, var(--ink), #374151);
-    display:flex; align-items:center; justify-content:center;
-    color:#fff; font-weight:700; text-align:center; padding:24px;
+    background-size:cover; background-position:center top;
   }
   .badge{
     position:absolute; top:-16px; right:-16px;
@@ -184,7 +181,8 @@
   .party-grid{ display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center; }
   @media (max-width:880px){ .party-grid{ grid-template-columns:1fr; } }
   .party-art{
-    border-radius:18px; aspect-ratio:4/3; background:linear-gradient(135deg,var(--red),var(--orange));
+    border-radius:18px; aspect-ratio:4/3;
+    background-size:cover; background-position:center;
     display:flex; align-items:center; justify-content:center; color:#fff; font-weight:800; font-size:22px; text-align:center; padding:30px;
     position:relative;
   }
@@ -259,9 +257,9 @@
     </div>
     <div class="collage">
       <div class="collage-grid">
-        <div class="ph tall">Photo:<br>Real learner,<br>laptop in hand</div>
-        <div class="ph">Photo:<br>Family video call</div>
-        <div class="ph alt">Photo:<br>Group Zoom session</div>
+        <div class="ph tall" style="background-image:url('https://images.pexels.com/photos/7983577/pexels-photo-7983577.jpeg?auto=compress&cs=tinysrgb&w=600&h=900&fit=crop')"></div>
+        <div class="ph" style="background-image:url('https://images.pexels.com/photos/7983559/pexels-photo-7983559.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop')"></div>
+        <div class="ph" style="background-image:url('https://images.pexels.com/photos/7983563/pexels-photo-7983563.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop')"></div>
       </div>
       <div class="note-card">"You don't have to do it alone. You just have to start."</div>
     </div>
@@ -290,7 +288,7 @@
 <section id="about">
   <div class="wrap about-grid">
     <div class="about-photo">
-      <div class="about-ph">Photo:<br>Milford Hutsell III</div>
+      <div class="about-ph" style="background-image:url('/images/milford-portrait.png')"></div>
       <div class="badge">25+<small>Years</small></div>
     </div>
     <div>
@@ -361,7 +359,7 @@
 
 <section id="party">
   <div class="wrap party-grid">
-    <div class="party-art">
+    <div class="party-art" style="background-image:linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.35)),url('https://images.pexels.com/photos/7983576/pexels-photo-7983576.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop')">
       <span class="live-pill">● LIVE</span>
       AI Party at Home<br>Sip, Click &amp; Learn
     </div>

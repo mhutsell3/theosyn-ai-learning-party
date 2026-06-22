@@ -10,7 +10,14 @@ const app = express();
 const PORT = process.env.PORT || 3010;
 
 // Middleware
-app.use(helmet());
+app.use(helmet({
+  contentSecurityPolicy: {
+    directives: {
+      ...helmet.contentSecurityPolicy.getDefaultDirectives(),
+      "img-src": ["'self'", "https://images.pexels.com"],
+    },
+  },
+}));
 app.use(morgan('combined'));
 app.use(cors());
 app.use(bodyParser.json({ limit: '10mb' }));
