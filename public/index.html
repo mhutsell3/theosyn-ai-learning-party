@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TheoSYN AI Learning Party — AI Made Simple for Baby Boomers &amp; Gen X</title>
+<meta name="description" content="AI made simple for Baby Boomers and Gen X who want to feel confident, capable, and excited about what's next. Live AI Parties, 1-on-1 coaching, and a self-paced Foundation Course from TheoSYN Labs founder Milford Hutsell III.">
+<style>
+  :root{
+    --red:#DC2626;
+    --orange:#F59E0B;
+    --ink:#111827;
+    --gray:#4B5563;
+    --light-gray:#F3F4F6;
+    --line:#E5E7EB;
+    --white:#FFFFFF;
+    --max:1140px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:"Segoe UI", Inter, Arial, sans-serif;
+    color:var(--ink);
+    background:var(--white);
+    font-size:18px;
+    line-height:1.65;
+  }
+  h1,h2,h3{
+    font-family:"Segoe UI", Inter, Arial, sans-serif;
+    font-weight:800;
+    line-height:1.15;
+    margin:0 0 16px;
+    letter-spacing:-0.01em;
+  }
+  a{color:inherit;}
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 24px;}
+  .grad{
+    background:linear-gradient(90deg, var(--red), var(--orange));
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
+  .btn{
+    display:inline-block;
+    background:var(--red);
+    color:#fff;
+    font-weight:700;
+    font-size:16px;
+    letter-spacing:.03em;
+    padding:16px 30px;
+    border-radius:10px;
+    text-decoration:none;
+    text-transform:uppercase;
+    border:2px solid var(--red);
+    transition:transform .15s ease, box-shadow .15s ease;
+    cursor:pointer;
+  }
+  .btn:hover{ transform:translateY(-2px); box-shadow:0 8px 20px rgba(220,38,38,.25); }
+  .btn:disabled{ opacity:0.6; cursor:not-allowed; }
+  .btn-outline{
+    background:transparent;
+    color:var(--ink);
+    border:2px solid var(--ink);
+  }
+  .btn-outline:hover{ box-shadow:0 8px 20px rgba(17,24,39,.12); }
+
+  /* HEADER */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(255,255,255,.96);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{ display:flex; align-items:center; justify-content:space-between; padding:18px 24px; max-width:var(--max); margin:0 auto;}
+  .logo{ font-size:22px; font-weight:800; }
+  .logo span{ color:var(--red); }
+  .navlinks{ display:flex; gap:28px; align-items:center; font-weight:600; font-size:16px;}
+  .navlinks a{ text-decoration:none; color:var(--ink); }
+  .navlinks a:hover{ color:var(--red); }
+  .nav-cta{ display:flex; align-items:center; gap:18px; }
+  @media (max-width:880px){ .navlinks{display:none;} }
+
+  /* HERO */
+  .hero{ padding:80px 0 60px; }
+  .hero-grid{ display:grid; grid-template-columns:1.1fr .9fr; gap:56px; align-items:center; }
+  @media (max-width:880px){ .hero-grid{ grid-template-columns:1fr; } }
+  .eyebrow{ display:flex; align-items:center; gap:10px; color:var(--red); font-weight:700; letter-spacing:.08em; font-size:14px; text-transform:uppercase; margin-bottom:18px;}
+  .eyebrow .dot{ width:8px; height:8px; border-radius:50%; background:var(--orange); }
+  .hero h1{ font-size:52px; }
+  @media (max-width:560px){ .hero h1{ font-size:38px; } }
+  .hero p.lead{ font-size:20px; color:var(--gray); max-width:520px; margin-bottom:32px; }
+  .cta-row{ display:flex; gap:16px; flex-wrap:wrap; margin-bottom:36px;}
+  .stat-row{ display:flex; gap:36px; flex-wrap:wrap; border-top:1px solid var(--line); padding-top:24px;}
+  .stat b{ display:block; font-size:28px; color:var(--ink); }
+  .stat span{ font-size:14px; color:var(--gray); text-transform:uppercase; letter-spacing:.04em;}
+
+  .collage{ position:relative; }
+  .collage-grid{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  .ph{
+    border-radius:16px;
+    aspect-ratio:1/1;
+    display:flex; align-items:center; justify-content:center;
+    font-size:13px; font-weight:700; text-align:center; color:#fff; padding:14px;
+    background:linear-gradient(135deg,var(--red),var(--orange));
+  }
+  .ph.alt{ background:linear-gradient(135deg, var(--ink), #374151); }
+  .ph.tall{ grid-row: span 2; aspect-ratio:auto; }
+  .note-card{
+    position:absolute; bottom:-18px; left:-18px;
+    background:#fff; border:1px solid var(--line); border-radius:14px;
+    padding:14px 18px; font-size:14px; font-weight:600; color:var(--ink);
+    box-shadow:0 12px 28px rgba(17,24,39,.12);
+    max-width:220px;
+  }
+  @media (max-width:560px){ .note-card{ display:none; } }
+
+  /* TICKER */
+  .ticker-wrap{ background:var(--ink); overflow:hidden; padding:16px 0; }
+  .ticker{ display:flex; gap:48px; white-space:nowrap; animation:scroll 28s linear infinite; }
+  .ticker span{ color:#fff; font-weight:700; font-size:14px; letter-spacing:.06em; text-transform:uppercase; }
+  .ticker span.acc{ color:var(--orange); }
+  @keyframes scroll{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+
+  /* SECTION SHARED */
+  section{ padding:88px 0; }
+  .section-head{ text-align:center; max-width:680px; margin:0 auto 56px; }
+  .section-head .eyebrow{ justify-content:center; }
+  .section-head h2{ font-size:38px; }
+  .section-head p{ color:var(--gray); font-size:18px; }
+  .bg-light{ background:var(--light-gray); }
+
+  /* ABOUT */
+  .about-grid{ display:grid; grid-template-columns:.85fr 1.15fr; gap:56px; align-items:center; }
+  @media (max-width:880px){ .about-grid{ grid-template-columns:1fr; } }
+  .about-photo{ position:relative; }
+  .about-ph{
+    border-radius:18px; aspect-ratio:4/5;
+    background:linear-gradient(160deg, var(--ink), #374151);
+    display:flex; align-items:center; justify-content:center;
+    color:#fff; font-weight:700; text-align:center; padding:24px;
+  }
+  .badge{
+    position:absolute; top:-16px; right:-16px;
+    background:var(--red); color:#fff; border-radius:14px;
+    padding:14px 18px; text-align:center; font-weight:800;
+    box-shadow:0 10px 24px rgba(220,38,38,.3);
+  }
+  .badge small{ display:block; font-size:11px; font-weight:600; letter-spacing:.06em; text-transform:uppercase; opacity:.9; }
+  .quote{
+    border-left:4px solid var(--red);
+    padding:6px 0 6px 20px; margin:26px 0;
+    font-style:italic; color:var(--gray); font-size:19px;
+  }
+  .quote b{ display:block; font-style:normal; color:var(--ink); margin-top:8px; font-size:15px;}
+  .checklist{ list-style:none; margin:24px 0 0; padding:0; }
+  .checklist li{ display:flex; gap:10px; margin-bottom:12px; font-size:17px; }
+  .checklist li::before{ content:"✓"; color:var(--red); font-weight:900; flex-shrink:0; }
+  .mini-stats{ display:flex; gap:28px; margin-top:30px; flex-wrap:wrap; }
+  .mini-stats div b{ display:block; font-size:24px; }
+  .mini-stats div span{ font-size:13px; color:var(--gray); text-transform:uppercase; letter-spacing:.04em;}
+
+  /* OFFERS */
+  .offer-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:28px; }
+  @media (max-width:980px){ .offer-grid{ grid-template-columns:1fr; } }
+  .card{
+    background:#fff; border:1px solid var(--line); border-radius:18px;
+    padding:34px 28px; display:flex; flex-direction:column;
+    box-shadow:0 6px 18px rgba(17,24,39,.05);
+    border-top:5px solid var(--red);
+  }
+  .card.featured{ border-top-color:var(--orange); transform:translateY(-10px); box-shadow:0 16px 32px rgba(17,24,39,.1); }
+  .card .tag{ font-size:12px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:var(--red); margin-bottom:10px; }
+  .card h3{ font-size:24px; margin-bottom:10px; }
+  .card p.desc{ color:var(--gray); font-size:16px; margin-bottom:20px; flex-grow:1; }
+  .price{ font-size:30px; font-weight:800; margin-bottom:4px; }
+  .price span{ font-size:14px; font-weight:600; color:var(--gray); }
+  .card ul{ list-style:none; padding:0; margin:0 0 24px; }
+  .card ul li{ font-size:15px; color:var(--gray); display:flex; gap:8px; margin-bottom:8px; }
+  .card ul li::before{ content:"✓"; color:var(--red); font-weight:900; }
+  .card .btn{ text-align:center; }
+
+  /* PARTY DETAIL */
+  .party-grid{ display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center; }
+  @media (max-width:880px){ .party-grid{ grid-template-columns:1fr; } }
+  .party-art{
+    border-radius:18px; aspect-ratio:4/3; background:linear-gradient(135deg,var(--red),var(--orange));
+    display:flex; align-items:center; justify-content:center; color:#fff; font-weight:800; font-size:22px; text-align:center; padding:30px;
+    position:relative;
+  }
+  .live-pill{ position:absolute; top:18px; left:18px; background:#fff; color:var(--red); font-size:12px; font-weight:800; padding:6px 14px; border-radius:20px; letter-spacing:.06em;}
+  .stars{ color:var(--orange); font-size:20px; margin-bottom:8px; }
+
+  /* COMMUNITY */
+  .community-box{
+    background:var(--ink); color:#fff; border-radius:24px; padding:64px 48px;
+    display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center;
+  }
+  @media (max-width:880px){ .community-box{ grid-template-columns:1fr; padding:40px 28px;} }
+  .community-box h2{ color:#fff; }
+  .community-box .eyebrow{ color:var(--orange); }
+  .community-box p{ color:#D1D5DB; font-size:18px; }
+  .community-box .checklist li::before{ color:var(--orange); }
+  .community-stats{ display:flex; gap:30px; flex-wrap:wrap; margin-top:18px; }
+  .community-stats div b{ font-size:22px; display:block; color:var(--orange); }
+  .community-stats div span{ font-size:13px; color:#9CA3AF; text-transform:uppercase; }
+
+  /* NEWSLETTER */
+  .newsletter{ text-align:center; max-width:620px; margin:0 auto; }
+  .form-row{ display:flex; gap:12px; max-width:440px; margin:28px auto 10px; }
+  .form-row input{ flex:1; padding:16px 18px; border-radius:10px; border:2px solid var(--line); font-size:16px; }
+  .form-row button{ padding:16px 30px; }
+  .fine{ font-size:13px; color:var(--gray); }
+  .form-message{ font-size:14px; margin-top:10px; padding:10px; border-radius:8px; }
+  .form-message.success{ background:#D1FAE5; color:#065F46; }
+  .form-message.error{ background:#FEE2E2; color:#7F1D1D; }
+  @media (max-width:560px){ .form-row{ flex-direction:column; } }
+
+  footer{ background:var(--ink); color:#9CA3AF; padding:48px 0 28px; font-size:14px; }
+  .footer-grid{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:24px; border-bottom:1px solid #1F2937; padding-bottom:28px; margin-bottom:20px;}
+  .footer-grid .logo{ color:#fff; }
+  .footer-links{ display:flex; gap:24px; flex-wrap:wrap; }
+  .footer-links a{ text-decoration:none; color:#9CA3AF; }
+  .footer-links a:hover{ color:#fff; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo">Theo<span>SYN</span> AI Learning Party</div>
+    <nav class="navlinks">
+      <a href="#about">About Milford</a>
+      <a href="#offers">The Program</a>
+      <a href="#party">AI Party</a>
+      <a href="#community">Community</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#party" class="btn">Join Me Live</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow"><span class="dot"></span> AI CONFIDENCE FOR BABY BOOMERS &amp; GEN X</div>
+      <h1>You're Not Behind.<br>You're Just <span class="grad">Getting Started.</span></h1>
+      <p class="lead">AI made simple for Baby Boomers and Gen X who want to feel confident, capable, and excited about what's next — one tiny step at a time.</p>
+      <div class="cta-row">
+        <a href="#party" class="btn">Join a Live AI Party</a>
+        <a href="#offers" class="btn btn-outline">Explore the Program</a>
+      </div>
+      <div class="stat-row">
+        <div class="stat"><b>25+ Yrs</b><span>Enterprise Tech Leadership</span></div>
+        <div class="stat"><b>100%</b><span>No Tech Jargon</span></div>
+        <div class="stat"><b>Weekly</b><span>Live AI Parties</span></div>
+      </div>
+    </div>
+    <div class="collage">
+      <div class="collage-grid">
+        <div class="ph tall">Photo:<br>Real learner,<br>laptop in hand</div>
+        <div class="ph">Photo:<br>Family video call</div>
+        <div class="ph alt">Photo:<br>Group Zoom session</div>
+      </div>
+      <div class="note-card">"You don't have to do it alone. You just have to start."</div>
+    </div>
+  </div>
+</section>
+
+<div class="ticker-wrap">
+  <div class="ticker">
+    <span>AI LEARNING PARTY</span><span class="acc">•</span>
+    <span>NO TECH JARGON</span><span class="acc">•</span>
+    <span>BABY BOOMERS &amp; GEN X</span><span class="acc">•</span>
+    <span>TRAVEL &amp; FAMILY PROJECTS</span><span class="acc">•</span>
+    <span>LIVE WEEKLY SESSIONS</span><span class="acc">•</span>
+    <span>1-ON-1 SUPPORT</span><span class="acc">•</span>
+    <span>ENTERPRISE-GRADE GUIDANCE</span><span class="acc">•</span>
+    <span>AI LEARNING PARTY</span><span class="acc">•</span>
+    <span>NO TECH JARGON</span><span class="acc">•</span>
+    <span>BABY BOOMERS &amp; GEN X</span><span class="acc">•</span>
+    <span>TRAVEL &amp; FAMILY PROJECTS</span><span class="acc">•</span>
+    <span>LIVE WEEKLY SESSIONS</span><span class="acc">•</span>
+    <span>1-ON-1 SUPPORT</span><span class="acc">•</span>
+    <span>ENTERPRISE-GRADE GUIDANCE</span><span class="acc">•</span>
+  </div>
+</div>
+
+<section id="about">
+  <div class="wrap about-grid">
+    <div class="about-photo">
+      <div class="about-ph">Photo:<br>Milford Hutsell III</div>
+      <div class="badge">25+<small>Years</small></div>
+    </div>
+    <div>
+      <div class="eyebrow"><span class="dot"></span> ABOUT MILFORD</div>
+      <h2>Enterprise Experience.<br>Brought Home <span class="grad">To You.</span></h2>
+      <p>After 25+ years leading enterprise technology and Industry&nbsp;4.0 systems for businesses that can't afford to get it wrong, I started TheoSYN Labs to bring that same dependable, no-jargon approach to local businesses and churches.</p>
+      <p>The AI Learning Party is the next step — taking that exact same patience and plain-English method and handing it directly to people in their 50s, 60s, and beyond who want AI to actually help with real life, not impress anyone.</p>
+      <div class="quote">"If I can make enterprise systems simple enough for a small business owner with no IT department, I can make AI simple enough for you."<b>MILFORD HUTSELL III · FOUNDER, THEOSYN AI LEARNING PARTY</b></div>
+      <div class="mini-stats">
+        <div><b>25+</b><span>Years Experience</span></div>
+        <div><b>100%</b><span>No-Jargon Promise</span></div>
+        <div><b>Faith-Driven</b><span>People-First Approach</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-light" id="offers">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="dot"></span> EXPLORE</div>
+      <h2>Your Next Chapter Starts Here</h2>
+      <p>Three ways to get started — a self-paced foundation, personal 1-on-1 help, and a live weekly party.</p>
+    </div>
+    <div class="offer-grid">
+      <div class="card">
+        <div class="tag">Self-Paced</div>
+        <h3>AI Foundation Course</h3>
+        <p class="desc">The complete step-by-step path to AI confidence — structured, simple, and built for Baby Boomers and Gen X learners.</p>
+        <div class="price">$197 <span>one-time</span></div>
+        <ul>
+          <li>4–6 short, guided modules</li>
+          <li>What AI actually is, in plain English</li>
+          <li>Hands-on practice with real tasks</li>
+          <li>Learn at your own pace, no deadlines</li>
+        </ul>
+        <button class="btn" onclick="openWaitlistModal()">Join the Waitlist</button>
+      </div>
+      <div class="card featured">
+        <div class="tag">Live Weekly · Most Popular</div>
+        <h3>AI Party at Home</h3>
+        <p class="desc">A cozy small-group Zoom session where Baby Boomers and Gen X learn AI together — every week, real practice, real questions answered.</p>
+        <div class="price">$17 <span>per person</span></div>
+        <ul>
+          <li>Capped at 10–12 people per session</li>
+          <li>90 minutes of guided, hands-on practice</li>
+          <li>Free AI starter kit included</li>
+          <li>Can't make it live? Replay is yours forever</li>
+        </ul>
+        <button class="btn" onclick="openPartyModal()">Save My Spot</button>
+      </div>
+      <div class="card">
+        <div class="tag">Personal · 1-on-1</div>
+        <h3>Personal AI Coaching</h3>
+        <p class="desc">One-on-one time with Milford to solve your specific AI questions — family photos, travel planning, a side project, anything.</p>
+        <div class="price">$127 <span>per session</span></div>
+        <ul>
+          <li>45–60 minute private Zoom session</li>
+          <li>Screen-share, step-by-step walkthrough</li>
+          <li>Written follow-up notes after each session</li>
+          <li>Direct partnership with the founder</li>
+        </ul>
+        <button class="btn" onclick="openCoachingModal()">Book Your Session</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="party">
+  <div class="wrap party-grid">
+    <div class="party-art">
+      <span class="live-pill">● LIVE</span>
+      AI Party at Home<br>Sip, Click &amp; Learn
+    </div>
+    <div>
+      <div class="eyebrow"><span class="dot"></span> AI PARTY AT HOME</div>
+      <h2>Learn AI With Friends.<br><span class="grad">Sip, Click &amp; Learn.</span></h2>
+      <p style="color:var(--gray); font-size:18px;">Grab your favorite drink, invite a few friends, and join Milford for the most fun you've had learning AI. This intimate 90-minute Zoom session is built for Baby Boomers and Gen X who want real guidance, real practice, and a few laughs along the way. Just $17 per person.</p>
+      <ul class="checklist">
+        <li>Small group of up to 12 — everyone gets personal attention</li>
+        <li>Practice real scenarios: travel planning, family projects, everyday tasks</li>
+        <li>Walk away with your own free AI starter kit</li>
+        <li>Get your questions answered live, with zero judgment</li>
+        <li>Can't attend live? Your replay is yours forever</li>
+      </ul>
+      <div class="stars">★★★★★</div>
+      <p style="font-style:italic; color:var(--gray);">"Best hour and a half I've spent online in years — and I actually learned something."</p>
+      <button class="btn" onclick="openPartyModal()">Save My Spot — $17</button>
+    </div>
+  </div>
+</section>
+
+<section class="bg-light" id="community">
+  <div class="wrap">
+    <div class="community-box">
+      <div>
+        <div class="eyebrow"><span class="dot"></span> THE COMMUNITY</div>
+        <h2>Where Baby Boomers &amp; Gen X<br>Rise Together</h2>
+        <p>Our Discord server is more than a chat room. It's a judgment-free space for curious, capable adults who are done sitting on the sidelines of the tech revolution. Come as you are.</p>
+        <div class="community-stats">
+          <div><b>Free</b><span>Always</span></div>
+          <div><b>Active</b><span>Daily</span></div>
+          <div><b>Zero</b><span>Judgment</span></div>
+        </div>
+      </div>
+      <div>
+        <ul class="checklist">
+          <li>Share your wins and "aha!" moments</li>
+          <li>Ask questions — Milford is active regularly</li>
+          <li>Find accountability partners</li>
+          <li>Celebrate every single step forward</li>
+        </ul>
+        <a href="#" class="btn" style="margin-top:10px;">Join the Discord</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap newsletter">
+    <div class="eyebrow" style="justify-content:center;"><span class="dot"></span> THE THEOSYN BRIEF</div>
+    <h2>Stay In The Loop</h2>
+    <p style="color:var(--gray); font-size:18px;">Bi-weekly AI tips, practical how-tos, and encouragement — no fluff, no jargon. Just your guide in your corner.</p>
+    <form class="form-row" id="newsletterForm" onsubmit="handleNewsletterSubmit(event);">
+      <input type="email" placeholder="Your email address" required>
+      <button type="submit" class="btn">Subscribe</button>
+    </form>
+    <div id="newsletterMessage"></div>
+    <p class="fine">No spam, ever · Bi-weekly tips · Unsubscribe anytime</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="logo">Theo<span style="color:var(--red);">SYN</span> AI Learning Party</div>
+        <p style="max-width:320px; margin-top:10px;">A program by TheoSYN Labs. Bringing enterprise-grade simplicity to AI — for Baby Boomers and Gen X learners.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#about">About Milford</a>
+        <a href="#offers">The Program</a>
+        <a href="#community">Discord</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+    <p>© 2026 TheoSYN AI Learning Party · A program by TheoSYN Labs. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- Modals -->
+<div id="waitlistModal" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.5);z-index:100;justify-content:center;align-items:center;">
+  <div style="background:#fff;padding:40px;border-radius:16px;max-width:400px;width:90%;">
+    <h2 style="margin-top:0;">Join the Waitlist</h2>
+    <form onsubmit="handleWaitlistSubmit(event);">
+      <input type="email" placeholder="Your email" required style="width:100%;padding:12px;margin-bottom:10px;border:2px solid var(--line);border-radius:8px;font-size:16px;">
+      <input type="text" placeholder="First Name" style="width:100%;padding:12px;margin-bottom:10px;border:2px solid var(--line);border-radius:8px;font-size:16px;">
+      <input type="text" placeholder="Last Name" style="width:100%;padding:12px;margin-bottom:20px;border:2px solid var(--line);border-radius:8px;font-size:16px;">
+      <div style="display:flex;gap:10px;">
+        <button type="submit" class="btn" style="flex:1;">Submit</button>
+        <button type="button" class="btn btn-outline" onclick="closeWaitlistModal()" style="flex:1;">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div id="partyModal" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.5);z-index:100;justify-content:center;align-items:center;">
+  <div style="background:#fff;padding:40px;border-radius:16px;max-width:400px;width:90%;">
+    <h2 style="margin-top:0;">Register for AI Party</h2>
+    <form onsubmit="handlePartySubmit(event);">
+      <input type="email" placeholder="Your email" required style="width:100%;padding:12px;margin-bottom:10px;border:2px solid var(--line);border-radius:8px;font-size:16px;">
+      <input type="text" placeholder="First Name" style="width:100%;padding:12px;margin-bottom:10px;border:2px solid var(--line);border-radius:8px;font-size:16px;">
+      <input type="text" placeholder="Last Name" style="width:100%;padding:12px;margin-bottom:20px;border:2px solid var(--line);border-radius:8px;font-size:16px;">
+      <div style="display:flex;gap:10px;">
+        <button type="submit" class="btn" style="flex:1;">Register</button>
+        <button type="button" class="btn btn-outline" onclick="closePartyModal()" style="flex:1;">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div id="coachingModal" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.5);z-index:100;justify-content:center;align-items:center;">
+  <div style="background:#fff;padding:40px;border-radius:16px;max-width:400px;width:90%;">
+    <h2 style="margin-top:0;">Book Your Coaching Session</h2>
+    <form onsubmit="handleCoachingSubmit(event);">
+      <input type="email" placeholder="Your email" required style="width:100%;padding:12px;margin-bottom:10px;border:2px solid var(--line);border-radius:8px;font-size:16px;">
+      <input type="text" placeholder="First Name" style="width:100%;padding:12px;margin-bottom:10px;border:2px solid var(--line);border-radius:8px;font-size:16px;">
+      <input type="text" placeholder="Last Name" style="width:100%;padding:12px;margin-bottom:10px;border:2px solid var(--line);border-radius:8px;font-size:16px;">
+      <textarea placeholder="What would you like to work on?" style="width:100%;padding:12px;margin-bottom:20px;border:2px solid var(--line);border-radius:8px;font-size:16px;min-height:80px;"></textarea>
+      <div style="display:flex;gap:10px;">
+        <button type="submit" class="btn" style="flex:1;">Book Now</button>
+        <button type="button" class="btn btn-outline" onclick="closeCoachingModal()" style="flex:1;">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+const API_BASE = '/api';
+
+function openWaitlistModal() {
+  document.getElementById('waitlistModal').style.display = 'flex';
+}
+
+function closeWaitlistModal() {
+  document.getElementById('waitlistModal').style.display = 'none';
+}
+
+function openPartyModal() {
+  document.getElementById('partyModal').style.display = 'flex';
+}
+
+function closePartyModal() {
+  document.getElementById('partyModal').style.display = 'none';
+}
+
+function openCoachingModal() {
+  document.getElementById('coachingModal').style.display = 'flex';
+}
+
+function closeCoachingModal() {
+  document.getElementById('coachingModal').style.display = 'none';
+}
+
+async function handleNewsletterSubmit(event) {
+  event.preventDefault();
+  const email = event.target.querySelector('input[type="email"]').value;
+  const messageDiv = document.getElementById('newsletterMessage');
+
+  try {
+    const response = await fetch(`${API_BASE}/forms/newsletter`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email })
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      messageDiv.className = 'form-message success';
+      messageDiv.textContent = data.message;
+      event.target.reset();
+    } else {
+      messageDiv.className = 'form-message error';
+      messageDiv.textContent = data.message;
+    }
+  } catch (error) {
+    messageDiv.className = 'form-message error';
+    messageDiv.textContent = 'Error submitting form. Please try again.';
+  }
+}
+
+async function handleWaitlistSubmit(event) {
+  event.preventDefault();
+  const inputs = event.target.querySelectorAll('input');
+  const email = inputs[0].value;
+  const firstName = inputs[1].value;
+  const lastName = inputs[2].value;
+
+  try {
+    const response = await fetch(`${API_BASE}/forms/foundation-waitlist`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, firstName, lastName })
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      alert(data.message);
+      closeWaitlistModal();
+    } else {
+      alert(data.message);
+    }
+  } catch (error) {
+    alert('Error submitting form. Please try again.');
+  }
+}
+
+async function handlePartySubmit(event) {
+  event.preventDefault();
+  const inputs = event.target.querySelectorAll('input');
+  const email = inputs[0].value;
+  const firstName = inputs[1].value;
+  const lastName = inputs[2].value;
+
+  try {
+    const response = await fetch(`${API_BASE}/forms/party-registration`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, firstName, lastName })
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      alert(data.message);
+      closePartyModal();
+    } else {
+      alert(data.message);
+    }
+  } catch (error) {
+    alert('Error submitting form. Please try again.');
+  }
+}
+
+async function handleCoachingSubmit(event) {
+  event.preventDefault();
+  const inputs = event.target.querySelectorAll('input');
+  const textarea = event.target.querySelector('textarea');
+  const email = inputs[0].value;
+  const firstName = inputs[1].value;
+  const lastName = inputs[2].value;
+  const topic = textarea.value;
+
+  try {
+    const response = await fetch(`${API_BASE}/forms/coaching-booking`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, firstName, lastName, topic })
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      alert(data.message);
+      closeCoachingModal();
+    } else {
+      alert(data.message);
+    }
+  } catch (error) {
+    alert('Error submitting form. Please try again.');
+  }
+}
+
+// Close modals when clicking outside
+document.addEventListener('click', function(event) {
+  const waitlistModal = document.getElementById('waitlistModal');
+  const partyModal = document.getElementById('partyModal');
+  const coachingModal = document.getElementById('coachingModal');
+
+  if (event.target === waitlistModal) closeWaitlistModal();
+  if (event.target === partyModal) closePartyModal();
+  if (event.target === coachingModal) closeCoachingModal();
+});
+</script>
+
+</body>
+</html>
