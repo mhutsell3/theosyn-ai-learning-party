@@ -36,7 +36,7 @@ router.post('/newsletter', async (req, res) => {
       firstName: '',
       lastName: '',
       source: 'Newsletter Signup',
-      tags: ['newsletter-subscriber', 'theosyn-ai-party']
+      tags: ['AI-Learning-Party-Newsletter', 'theosyn-ai-party']
     });
 
     console.log(`Newsletter signup: ${email}`);
