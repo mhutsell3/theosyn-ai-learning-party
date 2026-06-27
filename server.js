@@ -14,7 +14,7 @@ app.use(helmet({
   contentSecurityPolicy: {
     directives: {
       ...helmet.contentSecurityPolicy.getDefaultDirectives(),
-      "img-src": ["'self'", "https://images.pexels.com"],
+      "img-src": ["'self'", "https://images.pexels.com", "data:"],
     },
   },
 }));
